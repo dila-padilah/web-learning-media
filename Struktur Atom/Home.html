@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://font.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+        <title>Struktur Atom</title>
+        <style>
+            body {
+                background-image: url(Background.png);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 80px;
+                border-radius: 50%;
+                border: 3px solid #46251F;
+            }
+            .left {
+                position: absolute;
+                left: 0;
+                width: 75px;
+                border-radius: 50%;
+                border: 3px solid #46251F;
+            }
+            .left1 {
+                top: 0;
+            }
+            .left2 {
+                top: 90px;
+            }
+            .Judul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(15px, 6vw, 30px);
+                font-weight: bold;
+                margin: -10px;
+                padding: -10px;
+                -webkit-text-stroke: 2px #46251F;
+                text-shadow:
+                2px 2px 0 #800000,
+                4px 4px 8px rgba(0,0,0,0.3);
+            }
+            .Judul h1 {
+                color: #EEA694;
+                font-family: 'rubik spray paint', cursive;
+            }
+            .Animasi {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .Animasi img {
+                width: 20%;
+                border-radius: 12px;
+            }
+            .Menu {
+                display: flex;
+                padding: 15px;
+            }
+            .Kanan, .Kiri{
+                width: 50%;
+                padding: 20px;
+                gap: 20px;
+            }
+            .Tombol {
+                width: 80%;
+                margin:auto;
+                padding: 15px;
+                border: 1px solid #ccc;
+                display: flex;
+                background-color: #46251F;
+                justify-content: center;
+                border-radius: 30px;
+                font-style: #ccc;
+                margin: 10px;
+                position: relative;
+                align-items: center;
+                cursor: pointer;
+            }
+            .Tombol h3 {
+                color: #ccc;
+                font-size: clamp(8px, 6vw, 30px);
+                margin: auto;
+            }
+            .Tombol::before {
+                content: "";
+                position: absolute;
+                inset: -3px;
+                border-radius: 12px;
+                background: linear-gradient(
+                    45deg,
+                    #ff00ff,
+                    #00ffff,
+                    #ff00ff
+                );
+                filter: blur(8px);
+                opacity: 0.8;
+                animation: glow 3s linear infinite;
+                z-index: -1;
+            }
+            @keyframes glow {
+                0% {filter: blur(6px) hue-rotate(0deg);}
+                50% {filter: blur(10px) hue-rotate(180deg);}
+                100% {filter: blur(6px) hue-rotate(360deg);}
+            }
+            .Tombol img {
+                width: 10%;
+                height: 90%;
+                border-radius: 50%;
+                position: absolute;
+                left: 15px;
+            }
+            .Tombol:hover {
+                transform: translateY(-5px) scale(1.20);
+                box-shadow:
+                0 0 12px rgba(255, 0, 0, 0.6),
+                0 0 25px rgba(80, 0, 0, 0.3);
+                background: rgba(80, 0, 0, 0.8);
+            }
+            .Tombol:hover h3 {
+                color: yellow;
+                -webkit-text-stroke: 1px red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="icon-profil.png" class="left left1">
+        <img src="icon-dafpus.png" class="left left2">
+        <img src="icon-musik.png" class="right">
+        <div class="Judul">
+            <h1>STRUKTUR ATOM</h1>
+        </div>
+        <div class="Animasi">
+            <img src="Animasi.gif" alt="gambar bergerak">
+        </div>
+        <div class="Menu">
+            <div class="Kanan">
+            <div class="Tombol" onclick="buka('Tujuan-Pembelajaran)">
+                <img src="icon-TP.png">
+                <div class="content"><h3>Tujuan Pembelajaran</h3></div>
+            </div>
+            <div class="Tombol">
+                <img src="icon-materi.png">
+                <div class="content"><h3>Materi</h3></div>
+            </div></div>
+            <div class="Kiri">
+            <div class="Tombol">
+                <img src="icon-simulasi.png">
+                <div class="content"><h3>Simulasi</h3></div>
+            </div>
+            <div class="Tombol">
+                <img src="icon-evaluasi.png">
+                <div class="content"><h3>Evaluasi</h3></div>
+            </div></div>
+        </div>
+    </body>
+</html>
